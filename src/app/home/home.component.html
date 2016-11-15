@@ -1,0 +1,72 @@
+<div class="col-md-10 col-md-offset-1 dashboard card">
+	<div class="signin col-md-4 form-inline">
+		<h6 class="h6">DO YOU HAVE YOUR CODE?</h6>
+		<div class="form-group signin-form ">
+			<input #signinCode [(ngModel)]="code" class="form-control" type="text" placeholder="Your code">	
+		</div>
+		<div class="form-group">	
+			<button (click)="signIn(signinCode.value)" class="btn">Sign In</button>
+		</div>
+	</div>
+	
+	<div class="register-survivor col-md-8">
+		<h6 class="h6">ARE YOU A NEW SURVIVOR?</h6>
+		<div class="col-md-12 register-form">
+			  <div class="form-group col-md-12">
+			    <label for="nameInput">Name</label>
+			    <input [(ngModel)]="new_survivor.name" type="text" class="form-control" id="nameInput">
+			  </div>
+			  <div class="form-group col-md-6">
+			    <label for="inputAge">Age</label>
+			    <input [(ngModel)]="new_survivor.age" type="number" class="form-control" id="inputAge">
+			  </div>
+			  <div class="form-group col-md-6">
+			    <label for="selectGender">Gender</label>
+			    <select [(ngModel)]="new_survivor.gender" class="form-control">
+						<option>M</option>
+						<option>F</option>
+						<option>N/A</option>
+					</select>
+			  </div>
+			  <div class="form-group col-md-12">
+			    <div class="h6">MY LOCATION</div>
+			    <a (click)="getLocation()" class="btn btn-default" [ngClass]="{'disabled': located}">Provide My Location</a>
+			  </div>
+				
+				<div class="form-group col-md-12">
+			    <div class="h6">MY PROPERTIES</div>
+		  	  
+		  	  <div class="col-md-12 stats-container">
+				    <div class="col-md-3 stat">
+				    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/water.svg'">
+							</div>
+							<input [(ngModel)]="items.water.qty" type="number" class="form-control" id="inputWater">
+						</div>
+				    <div class="col-md-3 stat">
+				    	<div class="col-md-12 svg food" [inlineSVG]="'assets/svg/food.svg'">
+							</div>
+							<input [(ngModel)]="items.food.qty" type="number" class="form-control" id="inputFood">
+						</div>
+				    <div class="col-md-3 stat">
+				    	<div class="col-md-12 svg medication" [inlineSVG]="'assets/svg/medication.svg'">
+							</div>
+							<input [(ngModel)]="items.medication.qty" type="number" class="form-control" id="inputMedication">
+						</div>
+				    <div class="col-md-3 stat">
+				    	<div class="col-md-12 svg ammo" [inlineSVG]="'assets/svg/ammo.svg'">
+							</div>
+							<input [(ngModel)]="items.ammunition.qty" type="number" class="form-control" id="inputAmmunition">
+						</div>
+				  </div>
+			  </div>
+				
+
+				<div class="col-md-12 text-right">
+			  	<button (click)="createSurvivor()" class="btn btn-default">Submit</button>
+				</div>
+					
+			
+		</div>
+	</div>
+
+</div>

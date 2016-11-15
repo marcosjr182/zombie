@@ -1,0 +1,15 @@
+<div class="col-md-12">
+	<h2>ZSSN Reports</h2>
+</div>
+
+<div *ngFor="let report of stats" class="col-md-6">
+	<div class="col-md-12 card report-card">
+		<div class="col-md-12 description">
+			{{report.description}}
+		</div>
+		<div class="col-md-!2 data">
+			{{report.stat}} 
+			<span *ngIf="report.pct" class="pct">%</span>
+		</div>
+	</div>
+</div>

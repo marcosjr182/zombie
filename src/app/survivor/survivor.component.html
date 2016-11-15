@@ -1,0 +1,47 @@
+<div class="col-xs-12 card survivor-card" [ngClass]="{'infected-survivor': survivor['infected?'] }">
+	
+	<div class="col-xs-9 info">	
+    <h3 class="col-md-12 name">{{survivor.name}}</h3>
+    <div class="col-md-12 age">AGE {{survivor.age}}</div>
+	</div>
+	<div class="col-xs-3 actions">
+		<a class="btn btn-infected" [ngClass]="{'reported': survivor.reported }" (click)="onReport()" [inlineSVG]="'assets/svg/infected.svg'">
+		</a>
+	</div>
+
+  <div class="col-xs-12 stats-container">
+    <div class="col-xs-3 stat">
+    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/water.svg'">
+			</div>
+				{{survivor.water.qty || 0}}
+		</div>
+    <div class="col-xs-3 stat">
+    	<div class="col-md-12 svg food" [inlineSVG]="'assets/svg/food.svg'">
+			</div>
+			{{survivor.food.qty || 0}}
+    </div>
+    <div class="col-xs-3 stat">
+    	<div class="col-md-12 svg medication" [inlineSVG]="'assets/svg/medication.svg'">
+			</div>
+			{{survivor.medication.qty || 0}}
+    </div>
+    <div class="col-xs-3 stat">
+    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/ammo.svg'">
+			</div>
+			{{survivor.ammunition.qty || 0}}
+    </div>
+  </div>
+	
+	<sebm-google-map
+      [latitude] = "survivor.lat"
+      [longitude] = "survivor.lng"
+      [zoom] = "14"
+      [disableDefaultUI] = "true"
+      [zoomControl] = "false" class="hidden-xs map col-md-12">
+		<sebm-google-map-marker [latitude]="survivor.lat" [longitude]="survivor.lng"> </sebm-google-map-marker>
+  </sebm-google-map>
+	
+	<a *ngIf="registered" [routerLink]="['/trade', survivor.id]" class="btn btn-card col-xs-12">
+		OFFER TRADE
+	</a>
+</div>

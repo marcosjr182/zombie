@@ -1,0 +1,76 @@
+.h6 {
+	margin:0;
+}
+.btn-card {
+	color:#333;
+}
+.survivor-card {
+	padding:0;
+}
+
+.info, .actions {
+	margin-top:15px;
+	padding:0;
+}
+
+.actions {
+	padding-right:15px;
+	text-align:right;
+}
+
+
+.btn-infected {
+	padding:1px 4px;
+	padding-top:4px;
+	width:40%;
+	float:none;
+	opacity:0.4;
+	fill:#ccc;
+}
+.reported { fill: #e44355; opacity:1; }
+
+.btn-infected:hover {
+	opacity:1;
+	fill:#e44355;
+}
+
+.info .name { margin:0; }
+.info .age { font-size: 75%; }
+
+.map {
+	height:200px;
+	padding:0;
+	text-align:center;
+}
+
+.infected-survivor {
+	border-color:#e44355;
+}
+.infected-survivor .stats-container {
+	opacity:0.2;
+}
+.infected-survivor .actions .btn-infected {
+	fill: #e44355;
+	opacity:1;
+}
+
+.my-survivor-card {
+	border: 1px solid #e7e7e7;
+	border-radius:2px;
+	padding: 5px 0;
+}
+
+.my-survivor {
+	padding:0;
+}
+
+.my-survivor .h3 {
+	margin:0;
+	margin-top:5px;
+}
+
+.btn-action:hover {
+	backgroud:#e7e7e7;
+}
+
+

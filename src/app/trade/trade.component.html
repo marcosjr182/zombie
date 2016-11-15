@@ -1,0 +1,71 @@
+
+<div class="col-md-6 trade properties">
+	<div class="col-md-12 card survivor-card" >
+	
+		<div class="col-md-9 info">	
+	    <h3 class="col-md-12 name">{{my_survivor.name}}</h3>
+	    <div class="col-md-12 age">AGE {{my_survivor.age}}</div>
+		</div>
+		<div class="col-md-3 actions">
+		</div>
+
+	  <div class="col-xs-12 stats-container">
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/water.svg'">
+				</div>
+					{{my_survivor.water.qty || 0}}
+			</div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg food" [inlineSVG]="'assets/svg/food.svg'">
+				</div>
+				{{my_survivor.food.qty || 0}}
+	    </div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg medication" [inlineSVG]="'assets/svg/medication.svg'">
+				</div>
+				{{my_survivor.medication.qty || 0}}
+	    </div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/ammo.svg'">
+				</div>
+				{{my_survivor.ammunition.qty || 0}}
+	    </div>
+	  </div>
+  </div>
+</div>
+
+
+<div class="col-md-6 trade properties recipient">
+	<div class="col-md-12 card survivor-card" >
+	
+		<div class="col-md-9 info">	
+	    <h3 class="col-md-12 name">{{recipient.name}}</h3>
+	    <div class="col-md-12 age">AGE {{recipient.age}}</div>
+		</div>
+		<div class="col-md-3 actions">
+		</div>
+
+	  <div class="col-xs-12 stats-container">
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/water.svg'">
+				</div>
+				{{recipient.water.qty }}
+			</div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg food" [inlineSVG]="'assets/svg/food.svg'">
+				</div>
+				{{recipient.food.qty }}
+	    </div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg medication" [inlineSVG]="'assets/svg/medication.svg'">
+				</div>
+				{{recipient.medication.qty}}
+	    </div>
+	    <div class="col-xs-3 stat">
+	    	<div class="col-md-12 svg water" [inlineSVG]="'assets/svg/ammo.svg'">
+				</div>
+				{{recipient.ammunition.qty}}
+	    </div>
+  	</div>
+  </div>
+</div>

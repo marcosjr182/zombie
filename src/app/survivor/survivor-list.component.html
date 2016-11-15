@@ -1,0 +1,60 @@
+<div class="col-xs-12">
+  <div *ngIf="my_survivor != null" class="col-xs-12 my-survivor-card">
+    
+    <div  class="col-xs-6 my-survivor">
+      <h6 class="h6 col-md-12">
+        WELCOME
+      </h6>
+        
+      <h3  class="h3 col-md-8 ">
+        {{this.my_survivor.name}}
+      </h3>
+      <div class="col-md-12">
+        AGE {{my_survivor.age}}
+      </div>
+    </div>
+
+    <div class="col-xs-6">
+      <h6 class="h6 col-md-12">MY PROPERTIES</h6>
+      <div class="col-md-6">
+        
+        <div class="col-xs-12 stats-container">
+          <div class="col-xs-6 col-sm-3 stat">
+            <div class="col-md-12 svg water" [inlineSVG]="'assets/svg/water.svg'">
+            </div>
+            {{my_survivor.water.qty}}
+          </div>
+          <div class="col-sm-3 col-xs-6 stat">
+            <div class="col-md-12 svg food" [inlineSVG]="'assets/svg/food.svg'">
+            </div>
+            {{my_survivor.food.qty}}
+          </div>
+          <div class="col-sm-3 col-xs-6 stat">
+            <div class="col-md-12 svg medication" [inlineSVG]="'assets/svg/medication.svg'">
+            </div>
+            {{my_survivor.medication.qty}}
+          </div>
+          <div class="col-sm-3 col-xs-6 stat">
+            <div class="col-md-12 svg water" [inlineSVG]="'assets/svg/ammo.svg'">
+            </div>
+            {{my_survivor.ammunition.qty}}
+          </div>
+        </div>
+
+      </div>
+
+      <a (click)="signOut()" class="hidden-xs btn btn-default col-md-2 col-md-offset-4">Sign Out</a>
+
+    </div>
+  </div>
+</div>
+
+<div class="col-md-12">
+	<h2>Survivors</h2>
+</div>
+
+<div *ngFor="let survivor of survivors | paginate: { itemsPerPage: 6, currentPage: p }" class="col-md-4">
+	<survivor [survivor]='survivor' [registered]='registered' (report)='onReport($event)'></survivor>
+</div>
+
+<pagination-controls (pageChange)="p = $event" class="col-md-12"></pagination-controls>
